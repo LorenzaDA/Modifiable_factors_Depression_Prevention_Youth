@@ -1,12 +1,16 @@
 # Modifiable_factors_Depression_Prevention_Youth
 This repository is in reference to the manuscript **Evaluating Preventive Strategies for Internalizing Symptoms in the General Population and At-Risk Youth**, published in the special issue on **Depression Prevention** in the *Journal of Consulting and Clinical Psychology* in 2024. 
 
+
 **GUIDE TO THE REPOSITORY**
+
 Scripts are organized by study (ABCD and GenR). Within each folder, please follow the scripts in numerical order. 
 **These scripts are LICENCED. Should you use them for your research, please CITE our work at [DOI]**
 **For any questions, please contact ldallaglio@mgh.harvard.edu**
 
+
 **ABOUT THIS WORK**
+
 **Aim of this project:** Investigating how potential interventions on modifiable factors could reduce depression risk (internalizing symptoms) in the general population and in at-risk groups. 
 
 **Main predictors:** Modifiable factors that have been consistently found to reduce depression risk: Physical activity, screen time, sleep duration, social support. These were measured in childhood.
