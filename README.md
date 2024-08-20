@@ -4,7 +4,9 @@ This repository is in reference to the manuscript **Evaluating Preventive Strate
 **Aim of this project:** Investigating how potential interventions on modifiable factors could reduce depression risk (internalizing symptoms) in the general population and in at-risk groups. 
 
 **Main predictors:** Modifiable factors that have been consistently found to reduce depression risk: Physical activity, screen time, sleep duration, social support. These were measured in childhood.
+
 **Potential interventions:** These potential/hypothetical interventions consist on setting modifiable factors to be of different values than they currently are (e.g., setting every child to do 3 hours of physical activity a day instead of 2 hours). This will then inform on the predicted internalizing problems under such changes in the modifiable factor. 
+
 **Outcome:** Internalizing problems, a key precursor of depression later in life. These were measured in adolescence. 
 
 **Samples:** Two independent population-based samples, based in the US and the Netherlands, respectively: The Adolescent Brain Cognitive Development (ABCD, https://abcdstudy.org/) and The Generation R (GenR, https://generationr.nl/) Studies. 
