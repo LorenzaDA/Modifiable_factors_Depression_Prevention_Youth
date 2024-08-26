@@ -11,7 +11,7 @@
 rm(list=ls())
 source("/PATH-WHERE-SOURCE-FILE-IS/0a.source_file_packages_paths_ABCD.R")
 source("/PATH-WHERE-SOURCE-FILE-IS/0b.source_file_analyses_ABCD.R")
-load(paste0(indata, "modifiable_dep_youth_alldata_inclSens.RData"))
+load(paste0(indata, "modifiable_dep_youth_SENS_ADJ.RData"))
 
 # set covs (NB ethn and site residualized for - see rationale in script 1.)
 # compared to other models, here the variable composite_fam was added. This represents family conflict
