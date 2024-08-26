@@ -709,7 +709,7 @@ load("modifiable_dep_youth_alldata.RData")
 #####
 
 ### sensitivity analysis for adj. for family conflict ####
-# peer review request
+# peer review request - data added post-hoc
 
 family$crpbi_parent1_y <- as.numeric(family$crpbi_parent1_y)
 family$crpbi_parent2_y <- as.numeric(family$crpbi_parent2_y)
