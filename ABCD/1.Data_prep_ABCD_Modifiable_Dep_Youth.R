@@ -40,7 +40,6 @@ site <- read.delim(paste0(indata, "abcd_lt01.txt"), header = T, na.strings=c("",
 parpsych <- read.delim(paste0(indata, "abcd_asrs01.txt"), header = T, na.strings=c("","NA")) # parental psychopathology 
 mat_age <- read.csv(paste0(indata, "dhx01.txt")) # maternal age
 income <- read.csv(paste0(indata, "abcd_p_demo.csv")) # income
-family <- read.delim(paste0(indata, "crpbi01.txt"), header = T, na.strings=c("","NA")) # family conflict
 
 # selection 
 prs <- fread(paste0(indata, "ABCD PRS/", "abcd_prs.txt")) # polygenic score for risk for depression
@@ -710,7 +709,8 @@ load("modifiable_dep_youth_alldata.RData")
 
 ### sensitivity analysis for adj. for family conflict ####
 # peer review request - data added post-hoc
-
+family <- read.delim(paste0(indata, "crpbi01.txt"), header = T, na.strings=c("","NA")) # family conflict
+  
 family$crpbi_parent1_y <- as.numeric(family$crpbi_parent1_y)
 family$crpbi_parent2_y <- as.numeric(family$crpbi_parent2_y)
 family$crpbi_parent3_y <- as.numeric(family$crpbi_parent3_y)
