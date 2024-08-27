@@ -158,6 +158,9 @@ results_cs[, c("Coefficient", "Standard_Error", "P_Value")] <- round(results_cs[
 #####
 # this is to test the relationship between each modifiable factor with internalizing at T2
 # (no baseline adjustments nor pre-selection of participants for levels of internalizing problems)
+# NB the baseline vars are not changed here - ethn and site still included because in this dataset (which includes individuals with clinically-relevant symptoms
+# of depression) the internalizing problems had not been previously residualized for these variables. This was done in the main dataset for running g-computation,
+# which would fail otherwise. 
 
 # linear regression
 results_longi <- perform_regression_longi(baselinevars, pred_vars)
