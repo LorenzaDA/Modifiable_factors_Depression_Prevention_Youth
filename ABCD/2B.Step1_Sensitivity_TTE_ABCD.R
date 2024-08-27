@@ -133,6 +133,7 @@ saveRDS(dd, paste0(indata, "modif_dep_abcd_youth_sensitivity_withClinical_Jan202
 # STEP 1: cross-sectional association
 #####
 # this is to test the relationship between each modifiable factor with internalizing at T1
+# N.B. here adjusting for ethn and site in covariates because int at T1 was not previously residualized for these variables
 # this is generally done in the literature
 
 # set covariates
