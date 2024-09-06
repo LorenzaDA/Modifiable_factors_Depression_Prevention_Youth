@@ -20,34 +20,34 @@ perform_regression_CS <- function(baselinevars, pred_vars) {
   
   # loop through each predictor variable (screen time, pa, social support, sleep)
   for (var in pred_vars) {
-    # extract the variable name without the splines::ns() part [issue for the screen time variable]
+    # extract the variable name without the splines::ns() part to extract results later 
     var_cleaned <- gsub("splines::ns\\((.*?),.*", "\\1", var)
     
-    # Create a formula for the current predictor variable
+    # regression formula
     formula_string <- paste("int_t1_centered ~", paste(c(baselinevars), collapse = "+"), "+", var)
     formula <- as.formula(formula_string)
     
-    # Run linear regression
+    # run linear regression
     lm_result <- lm(formula, data = dd)
     
-    # Extract coefficients, standard errors, and p-values
+    # extract coefficients, standard errors, and p-values
     coef_data <- coef(lm_result)
     std_err_data <- summary(lm_result)$coef[, "Std. Error"]
     p_value_data <- summary(lm_result)$coef[, "Pr(>|t|)"]
     
-    # Use regular expression to find the index for the variable of interest
+    # use regular expression to find the index for the variable of interest
     var_regex <- paste0("\\b", gsub("[-.*+^]", "\\\\\\0", var_cleaned), "\\b")
     var_index <- grep(var_regex, names(coef_data), perl = TRUE, ignore.case = TRUE)
     
-    # Check if the variable is found in the coefficients
+    # check if the variable is found in the coefficients
     if (length(var_index) > 0) {
-      # Extract the coefficients, standard errors, and p-values
+      # extract the coefficients, standard errors, and p-values
       result_row <- data.frame(Variable = names(coef_data)[var_index],
                                Coefficient = coef_data[var_index],
                                Standard_Error = std_err_data[var_index],
                                P_Value = p_value_data[var_index])
       
-      # Add the result row to the dataframe
+      # add the result row to the dataframe
       results_df <- rbind(results_df, result_row)
     } else {
       print(paste("Variable not found in coefficients:", var))
@@ -66,10 +66,8 @@ perform_regression_longi <- function(baselinevars, pred_vars) {
                            Standard_Error = numeric(),
                            P_Value = numeric(),
                            row.names = NULL)
-  
-  # Loop through each predictor variable
+
   for (var in pred_vars) {
-    # Extract the variable name without the splines::ns() part
     var_cleaned <- gsub("splines::ns\\((.*?),.*", "\\1", var)
     
     # Create a formula for the current predictor variable
@@ -210,7 +208,7 @@ predict_and_contrast_pa_boot <- function(datasets, levels, baselinevars, n_boot 
       # Fit the model on the bootstrap sample
       fit.boot <- lm(out_formula, data = bootstrap_sample)
       
-      # Make predictions on the original data, not the bootstrap sample
+      # Make predictions on the original data
       pred_list <- list()
       for (level in levels) {
         newdata <- data.frame(pa = as.numeric(level), dplyr::select(data, -pa))
@@ -290,7 +288,7 @@ predict_and_contrast_screen_boot <- function(datasets, levels, baselinevars, n_b
       # Fit the model on the bootstrap sample
       fit.boot <- lm(out_formula, data = bootstrap_sample)
       
-      # Make predictions on the original data, not the bootstrap sample
+      # Make predictions on the original data
       pred_list <- list()
       for (level in levels) {
         newdata <- data.frame(screen = as.numeric(level), dplyr::select(data, -screen))
