@@ -1,4 +1,4 @@
-# Modifiable_factors_Depression_Prevention_Youth
+# Modifiable factors Depression Prevention Youth - TTE and G-formula
 This repository is in reference to the manuscript **Evaluating Preventive Strategies for Internalizing Symptoms in the General Population and At-Risk Youth**, published in the special issue on **Depression Prevention** in the *Journal of Consulting and Clinical Psychology* in 2024. 
 
 
